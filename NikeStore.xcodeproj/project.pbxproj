@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		398AC3D296BBD6D4A34FFA18 /* Pods_NikeStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C99C825C23F601BF9F88942 /* Pods_NikeStore.framework */; };
+		6D1013401E817FD200AF3CA0 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10133F1E817FD200AF3CA0 /* RegisterController.swift */; };
+		6D19DB2E1E81920700425C0F /* loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D19DB2D1E81920700425C0F /* loader.swift */; };
+		6D6B96B11E818288005783A6 /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B96B01E818288005783A6 /* constant.swift */; };
+		6DA417561E7B3C1600987A14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA417551E7B3C1600987A14 /* AppDelegate.swift */; };
+		6DA417581E7B3C1600987A14 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA417571E7B3C1600987A14 /* LandingViewController.swift */; };
+		6DA417601E7B3C1600987A14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA4175E1E7B3C1600987A14 /* LaunchScreen.storyboard */; };
+		6DA417681E7B50B600987A14 /* SigninController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA417671E7B50B500987A14 /* SigninController.swift */; };
+		6DCB60BC1E7B5EB00056A014 /* StoreLandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB60BB1E7B5EB00056A014 /* StoreLandingController.swift */; };
+		6DCB60BE1E7B624D0056A014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DCB60BD1E7B624D0056A014 /* Assets.xcassets */; };
+		6DCB60C01E7B64210056A014 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DCB60BF1E7B64210056A014 /* Roboto-Regular.ttf */; };
+		6DCB60C21E7B6D8E0056A014 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB60C11E7B6D8E0056A014 /* extension.swift */; };
+		6DE335FF1E7C4C670095E4D5 /* shoesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE335FE1E7C4C670095E4D5 /* shoesController.swift */; };
+		6DE336011E7CAF520095E4D5 /* productDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE336001E7CAF520095E4D5 /* productDetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3C99C825C23F601BF9F88942 /* Pods_NikeStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikeStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D10133F1E817FD200AF3CA0 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		6D19DB2D1E81920700425C0F /* loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loader.swift; sourceTree = "<group>"; };
+		6D6B96B01E818288005783A6 /* constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
+		6DA417521E7B3C1600987A14 /* NikeStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikeStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DA417551E7B3C1600987A14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6DA417571E7B3C1600987A14 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		6DA4175F1E7B3C1600987A14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6DA417611E7B3C1600987A14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DA417671E7B50B500987A14 /* SigninController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninController.swift; sourceTree = "<group>"; };
+		6DCB60BB1E7B5EB00056A014 /* StoreLandingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreLandingController.swift; sourceTree = "<group>"; };
+		6DCB60BD1E7B624D0056A014 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6DCB60BF1E7B64210056A014 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		6DCB60C11E7B6D8E0056A014 /* extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		6DE335FE1E7C4C670095E4D5 /* shoesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shoesController.swift; sourceTree = "<group>"; };
+		6DE336001E7CAF520095E4D5 /* productDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productDetailViewController.swift; sourceTree = "<group>"; };
+		ADF0B8D6007E9012670A036B /* Pods-NikeStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikeStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NikeStore/Pods-NikeStore.debug.xcconfig"; sourceTree = "<group>"; };
+		BFA3E2A51BAF419E70729F79 /* Pods-NikeStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikeStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-NikeStore/Pods-NikeStore.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6DA4174F1E7B3C1500987A14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				398AC3D296BBD6D4A34FFA18 /* Pods_NikeStore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E295D961D2FAC1FF70633C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADF0B8D6007E9012670A036B /* Pods-NikeStore.debug.xcconfig */,
+				BFA3E2A51BAF419E70729F79 /* Pods-NikeStore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		14EAC924271D68C3207A98E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C99C825C23F601BF9F88942 /* Pods_NikeStore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6DA417491E7B3C1500987A14 = {
+			isa = PBXGroup;
+			children = (
+				6DA417541E7B3C1600987A14 /* NikeStore */,
+				6DA417531E7B3C1600987A14 /* Products */,
+				0E295D961D2FAC1FF70633C8 /* Pods */,
+				14EAC924271D68C3207A98E6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6DA417531E7B3C1600987A14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6DA417521E7B3C1600987A14 /* NikeStore.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6DA417541E7B3C1600987A14 /* NikeStore */ = {
+			isa = PBXGroup;
+			children = (
+				6DA417551E7B3C1600987A14 /* AppDelegate.swift */,
+				6DA417571E7B3C1600987A14 /* LandingViewController.swift */,
+				6D6B96B01E818288005783A6 /* constant.swift */,
+				6DCB60BB1E7B5EB00056A014 /* StoreLandingController.swift */,
+				6DE335FE1E7C4C670095E4D5 /* shoesController.swift */,
+				6DE336001E7CAF520095E4D5 /* productDetailViewController.swift */,
+				6DA417671E7B50B500987A14 /* SigninController.swift */,
+				6D19DB2D1E81920700425C0F /* loader.swift */,
+				6D10133F1E817FD200AF3CA0 /* RegisterController.swift */,
+				6DA4175E1E7B3C1600987A14 /* LaunchScreen.storyboard */,
+				6DCB60C11E7B6D8E0056A014 /* extension.swift */,
+				6DCB60BF1E7B64210056A014 /* Roboto-Regular.ttf */,
+				6DCB60BD1E7B624D0056A014 /* Assets.xcassets */,
+				6DA417611E7B3C1600987A14 /* Info.plist */,
+			);
+			path = NikeStore;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6DA417511E7B3C1500987A14 /* NikeStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DA417641E7B3C1600987A14 /* Build configuration list for PBXNativeTarget "NikeStore" */;
+			buildPhases = (
+				6B6DE086E6DA80413E886D6D /* [CP] Check Pods Manifest.lock */,
+				6DA4174E1E7B3C1500987A14 /* Sources */,
+				6DA4174F1E7B3C1500987A14 /* Frameworks */,
+				6DA417501E7B3C1500987A14 /* Resources */,
+				281900CBE0A60CB6D26D60A2 /* [CP] Embed Pods Frameworks */,
+				1510F27544D6C7F46CC00470 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NikeStore;
+			productName = NikeStore;
+			productReference = 6DA417521E7B3C1600987A14 /* NikeStore.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6DA4174A1E7B3C1500987A14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Sagaya Abdulhafeez";
+				TargetAttributes = {
+					6DA417511E7B3C1500987A14 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = TZMPDXRVT8;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6DA4174D1E7B3C1500987A14 /* Build configuration list for PBXProject "NikeStore" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6DA417491E7B3C1500987A14;
+			productRefGroup = 6DA417531E7B3C1600987A14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6DA417511E7B3C1500987A14 /* NikeStore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6DA417501E7B3C1500987A14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DCB60C01E7B64210056A014 /* Roboto-Regular.ttf in Resources */,
+				6DCB60BE1E7B624D0056A014 /* Assets.xcassets in Resources */,
+				6DA417601E7B3C1600987A14 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1510F27544D6C7F46CC00470 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NikeStore/Pods-NikeStore-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		281900CBE0A60CB6D26D60A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NikeStore/Pods-NikeStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B6DE086E6DA80413E886D6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6DA4174E1E7B3C1500987A14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DE335FF1E7C4C670095E4D5 /* shoesController.swift in Sources */,
+				6DA417581E7B3C1600987A14 /* LandingViewController.swift in Sources */,
+				6D19DB2E1E81920700425C0F /* loader.swift in Sources */,
+				6DE336011E7CAF520095E4D5 /* productDetailViewController.swift in Sources */,
+				6DCB60BC1E7B5EB00056A014 /* StoreLandingController.swift in Sources */,
+				6D1013401E817FD200AF3CA0 /* RegisterController.swift in Sources */,
+				6DA417681E7B50B600987A14 /* SigninController.swift in Sources */,
+				6DCB60C21E7B6D8E0056A014 /* extension.swift in Sources */,
+				6D6B96B11E818288005783A6 /* constant.swift in Sources */,
+				6DA417561E7B3C1600987A14 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6DA4175E1E7B3C1600987A14 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DA4175F1E7B3C1600987A14 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6DA417621E7B3C1600987A14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6DA417631E7B3C1600987A14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6DA417651E7B3C1600987A14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADF0B8D6007E9012670A036B /* Pods-NikeStore.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TZMPDXRVT8;
+				INFOPLIST_FILE = NikeStore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cosmo.NikeStore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6DA417661E7B3C1600987A14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFA3E2A51BAF419E70729F79 /* Pods-NikeStore.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TZMPDXRVT8;
+				INFOPLIST_FILE = NikeStore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cosmo.NikeStore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6DA4174D1E7B3C1500987A14 /* Build configuration list for PBXProject "NikeStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DA417621E7B3C1600987A14 /* Debug */,
+				6DA417631E7B3C1600987A14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DA417641E7B3C1600987A14 /* Build configuration list for PBXNativeTarget "NikeStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DA417651E7B3C1600987A14 /* Debug */,
+				6DA417661E7B3C1600987A14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6DA4174A1E7B3C1500987A14 /* Project object */;
+}
