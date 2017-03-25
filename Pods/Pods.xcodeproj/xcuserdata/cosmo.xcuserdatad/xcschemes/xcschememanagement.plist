@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-NikeStore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>40FC931EC4D423F11A422579A6657DE0</key>
+		<key>12F7564EF5B2EC58D53DCC4F92AF86FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1E5BBB331424274CAF6BFE679945363D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4FEB66A01E4CC55B64D63117D1ECEE99</key>
+		<key>7B33C61B46A97AA2677B62137502857B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +62,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A5FE769156FDF11C4FEA26CEFDB61DD6</key>
+		<key>C4944FEC314D1A66588651D006273ADE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

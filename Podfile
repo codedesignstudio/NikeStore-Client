@@ -9,6 +9,7 @@ pod 'SkyFloatingLabelTextField'
 pod 'IQKeyboardManagerSwift'
 pod ‘Alamofire’
 pod ‘SwiftyJSON’
+pod 'Kingfisher'
 end
 post_install do |installer|
     installer.pods_project.targets.each do |target|

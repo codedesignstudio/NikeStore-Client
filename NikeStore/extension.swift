@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 extension UIView {
     
@@ -47,6 +48,32 @@ extension UserDefaults {
     }
 }
 
+extension StoreLandingController{
+    func getCategories(){
+        LLSpinner.spin()
+        let token = UserDefaults.standard.string(forKey: "token")
+        let header:HTTPHeaders = ["token": token!]
+        Alamofire.request(CATEGORIES, method: .get, parameters: nil, encoding: JSONEncoding(options: []), headers: header).responseJSON { (response) in
+            if response.response?.statusCode == 200{
+                LLSpinner.stop()
+                let jsonObject = JSON(response.result.value)
+                let jsonCategories = jsonObject["categories"].array
+                for jsonCategory in jsonCategories!{
+                    let name = jsonCategory["name"].string
+                    let image_url = jsonCategory["attachment_url"].string
+                    let newCategory = Category(name: name, image: image_url, color: .randomColor())
+                    self.allCategory.append(newCategory)
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                    
+                }
+            }else{
+                LLSpinner.stop()
+            }
+        }
+    }
+}
 
 extension RegisterController {
     func handleRegister(){
@@ -67,15 +94,22 @@ extension RegisterController {
 extension SigninController {
     func handleSignIn(){
         LLSpinner.spin()
-        guard let email = emailTextField.text, let password = passwordTextField.text else {return}
+        guard let email = emailTextField.text?.lowercased(), let password = passwordTextField.text else {return}
         let params:Parameters = ["email": email,"password":password]
+        print(params)
         Alamofire.request(LOGIN, method: .post, parameters: params, encoding: JSONEncoding(options: []), headers: nil).responseJSON { (response) in
             if response.response?.statusCode == 200{
-                LLSpinner.stop()
+                let jsonObj = JSON(response.result.value)
+                print(jsonObj)
+                let token = jsonObj["token"].string
+                UserDefaults.standard.setValue(token, forKey: "token")
                 UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                LLSpinner.stop()
                 let vc = UINavigationController(rootViewController: StoreLandingController())
                 self.present(vc, animated: true, completion: nil)
             }else{
+                let jsonObj = JSON(response.result.value)
+                print(jsonObj)
                 LLSpinner.stop()
             }
         }

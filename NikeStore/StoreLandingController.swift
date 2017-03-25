@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Kingfisher
 
-struct Nike {
+struct Category {
     var name:String?
     var image: String?
     var color: UIColor?
@@ -23,7 +24,7 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
         return colection
     }()
     
-    var allCategory = [Nike]()
+    var allCategory = [Category]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,16 +34,12 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)]
         title = "Nike Store"
         collectionView.delegate = self
+        getCategories()
         collectionView.dataSource = self
         collectionView.register(ColCell.self, forCellWithReuseIdentifier: "cell")
-        allCategory.append(Nike(name: "SHOES", image: "shoe", color: UIColor(red:0.95, green:0.87, blue:0.79, alpha:1.0)))
-        allCategory.append(Nike(name: "TOPS & SHIRTS", image: "shirts", color: UIColor(red:1.00, green:0.87, blue:0.87, alpha:1.0)))
-        allCategory.append(Nike(name: "SPORTS & BRA", image: "bra", color: .white))
-        allCategory.append(Nike(name: "JACKETS & HOODIE", image: "hoodie", color: UIColor(red:0.95, green:0.87, blue:0.79, alpha:1.0)))
-        allCategory.append(Nike(name: "WATCH", image: "watch", color: UIColor(red:0.95, green:0.87, blue:0.79, alpha:1.0)))
-        allCategory.append(Nike(name: "SOCKS", image: "socks", color: .white))
-        allCategory.append(Nike(name: "PANTS & TIGHT", image: "pants", color: .white))
-        allCategory.append(Nike(name: "BAGS & BACKPACKS", image: "bags", color: UIColor(red:1.00, green:0.87, blue:0.87, alpha:1.0)))
+ 
+
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         if UserDefaults.standard.bool(forKey: "isLoggedIn") != true{
@@ -64,21 +61,9 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
             return CGSize(width: collectionView.frame.width, height: 100)
         }else if indexPath.row == 1{
             return CGSize(width: collectionView.frame.width, height: 100)
-        }else if indexPath.row == 2{
-            return CGSize(width: collectionView.frame.width / 2, height: 100)
-        }else if indexPath.row == 3{
-            return CGSize(width: collectionView.frame.width / 2 - 10, height: 100)
-        }else if indexPath.row == 4{
-            return CGSize(width: collectionView.frame.width / 2, height: 100)
-        }else if indexPath.row == 5{
-            return CGSize(width: collectionView.frame.width / 2 - 10, height: 100)
-        }else if indexPath.row == 6{
-            return CGSize(width: collectionView.frame.width / 2, height: 100)
-        }else if indexPath.row == 7{
-            return CGSize(width: collectionView.frame.width / 2 - 2, height: 100)
         }
-
-        return CGSize(width: 100, height: 100)
+        
+        return CGSize(width: collectionView.frame.width / 2 - 10, height: 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -99,12 +84,13 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
 
 class ColCell:UICollectionViewCell{
     
-    var category:Nike?{
+    var category:Category?{
         didSet{
-            guard let catText = category?.name, let bgColor = category?.color, let image = category?.image else{return}
+            guard let catText = category?.name?.uppercased(), let bgColor = category?.color, let image = category?.image else{return}
             categoryText.text = catText
             backgroundColor = bgColor
-            imageV.image = UIImage(named: image)
+            let url = URL(string: (category?.image)!)
+            imageV.kf.setImage(with: url)
         }
     }
     
