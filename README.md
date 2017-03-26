@@ -24,10 +24,10 @@ iOS client app for Nike Store
 
 ## ScreenShots
 
-<img src="/assets/1.png">
-<img src="/assets/2.png">
-<img src="/assets/3.png">
-<img src="/assets/4.png">
+<img src="/assets/1.png" width="200" height="400">
+<img src="/assets/2.png" width="200" height="400">
+<img src="/assets/3.png" width="200" height="400">
+<img src="/assets/4.png" width="200" height="400">
 
 
 
