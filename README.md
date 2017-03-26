@@ -11,14 +11,18 @@ iOS client app for Nike Store
 - Today widget(coming soon)
 
 ##App Link
-[DailyFeed App]()
+
+
+[NikeStore App]()
 
 ##Installation
-- `git clone https://github.com/paulsumit1993/dailyfeed`
+- `git clone https://github.com/codedesignstudio/NikeStore-Client.git`
 - `open NikeStore-Client/NikeStore-Client.xcworkspace`
 - open terminal `cd` to the directory and run `pod install`
 - open Xcode <kbd>COMMAND</kbd> + <kbd>R</kbd>
 
 ##Design
+
+
 
 [Momoh Silm](https://twitter.com/m_silm)
