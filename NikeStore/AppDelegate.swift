@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().backgroundColor = .white
         UINavigationBar.appearance().tintColor = .black
+        UINavigationBar.appearance().isOpaque = true
         
         let vc = UINavigationController(rootViewController: StoreLandingController())
         window?.rootViewController = vc

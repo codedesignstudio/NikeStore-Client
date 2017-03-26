@@ -7,37 +7,47 @@
 //
 
 import UIKit
+import Kingfisher
 
 struct Product{
     var name:String?
     var image:String?
     var price: String?
+    var images: [String]?
+    var description:String
+    var id:String?
 }
 
-class shoesController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-    
+class ProductController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    var category_id:String?
+    var category_name:String?
+    var token:String?
     let topCollection: UICollectionView = {
         let flow = UICollectionViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: flow)
         collection.backgroundColor = .white
         collection.translatesAutoresizingMaskIntoConstraints = false
         flow.scrollDirection = .horizontal
+        collection.showsHorizontalScrollIndicator = false
         return collection
     }()
     
     let collectionView: UICollectionView = {
-//        let flow1 = UICollectionViewFlowLayout()
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+        collection.isScrollEnabled = true
+        collection.flashScrollIndicators()
         collection.backgroundColor = .white
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
     
-    var shoes = [Product]()
+    var products = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Shoes"
+        token = UserDefaults.standard.string(forKey: "token")
+        
+        title = category_name!.uppercased()
         self.navigationController?.navigationBar.topItem?.title = " "
         view.backgroundColor = .white
         topCollection.delegate = self
@@ -52,31 +62,28 @@ class shoesController: UIViewController, UICollectionViewDelegate,UICollectionVi
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
             topCollection.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            topCollection.topAnchor.constraint(equalTo: view.topAnchor),
+            topCollection.bottomAnchor.constraint(equalTo: collectionView.topAnchor),
             topCollection.widthAnchor.constraint(equalTo: view.widthAnchor),
             topCollection.heightAnchor.constraint(equalToConstant: 200),
             
             collectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            collectionView.topAnchor.constraint(equalTo: topCollection.bottomAnchor, constant: 20),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            collectionView.heightAnchor.constraint(equalTo: view.heightAnchor),
-
-        ])
-        
-        shoes.append(Product(name: "Hyper Dunk 2016 fly", image: "1", price: "17000"))
-        shoes.append(Product(name: "Kyrie 2", image: "2", price: "16000"))
-        shoes.append(Product(name: "Zoom Lebron soldier", image: "3", price: "18000"))
-        shoes.append(Product(name: "Hyper Dunk 2016", image: "5", price: "11000"))
-        shoes.append(Product(name: "Hyper Dunk 2016", image: "6", price: "20000"))
-        shoes.append(Product(name: "Lebron x11 limited", image: "7", price: "19000"))
-
-        
+            collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7),
+            
+            ])
+    }
+    override func viewDidLayoutSubviews() {
+       
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        getProducts()
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == topCollection{
             return 3
         }else{
-            return shoes.count
+            return products.count
         }
         
     }
@@ -87,7 +94,7 @@ class shoesController: UIViewController, UICollectionViewDelegate,UICollectionVi
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ShoeCell
-            cell.shoe = shoes[indexPath.row]
+            cell.shoe = products[indexPath.row]
 
             return cell
         }
@@ -122,9 +129,9 @@ class shoesController: UIViewController, UICollectionViewDelegate,UICollectionVi
         
         var vc = productDetailViewController()
         
-        vc.product = self.shoes[indexPath.row]
+        vc.product = self.products[indexPath.row]
         
-        self.navigationController?.pushViewController(productDetailViewController(), animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -162,10 +169,15 @@ class ShoeCell: UICollectionViewCell{
     
     var shoe: Product?{
         didSet{
-            guard let img = shoe?.image, let name = shoe?.name?.capitalized,let price = shoe?.price else{ return }
-            imageV.image = UIImage(named: img)
-            shoeName.text = name
-            shoePrice.text = "₦ \(price)"
+            var strUrl = shoe?.image!
+            let beforeIndex = strUrl?.index((strUrl?.endIndex)!, offsetBy: -4)
+            let characterToAppend:Character = "t"
+            strUrl?.insert(characterToAppend, at: beforeIndex!)
+            let imgUrl = URL(string: strUrl!)
+            imageV.kf.setImage(with: imgUrl)
+            shoeName.text = shoe?.name!
+            guard let price = shoe?.price else {return}
+            shoePrice.text = "₦\(price)"
         }
     }
     
@@ -173,6 +185,7 @@ class ShoeCell: UICollectionViewCell{
        let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.contentMode = .scaleAspectFill
+        img.layer.masksToBounds = true
         return img
     }()
     
@@ -204,14 +217,14 @@ class ShoeCell: UICollectionViewCell{
         
         NSLayoutConstraint.activate([
             imageV.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageV.centerYAnchor.constraint(equalTo: centerYAnchor),
-            imageV.heightAnchor.constraint(equalTo: heightAnchor),
+            imageV.bottomAnchor.constraint(equalTo: shoeName.topAnchor, constant: -4),
+            imageV.heightAnchor.constraint(equalTo: heightAnchor, constant: -50),
             imageV.widthAnchor.constraint(equalTo: widthAnchor),
             
             shoePrice.centerXAnchor.constraint(equalTo: centerXAnchor),
             shoePrice.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
             shoeName.centerXAnchor.constraint(equalTo: centerXAnchor),
-            shoeName.bottomAnchor.constraint(equalTo: shoePrice.topAnchor, constant: -8),
+            shoeName.bottomAnchor.constraint(equalTo: shoePrice.topAnchor, constant: -1),
             
         ])
     }

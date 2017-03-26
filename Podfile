@@ -10,6 +10,8 @@ pod 'IQKeyboardManagerSwift'
 pod ‘Alamofire’
 pod ‘SwiftyJSON’
 pod 'Kingfisher'
+pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+
 end
 post_install do |installer|
     installer.pods_project.targets.each do |target|

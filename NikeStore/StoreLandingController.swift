@@ -8,11 +8,13 @@
 
 import UIKit
 import Kingfisher
+import ChameleonFramework
 
 struct Category {
     var name:String?
     var image: String?
     var color: UIColor?
+    var id:String?
 }
 
 class StoreLandingController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
@@ -21,6 +23,7 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
         let flow = UICollectionViewFlowLayout()
         let colection = UICollectionView(frame: .zero, collectionViewLayout: flow)
         colection.backgroundColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
+        colection.showsVerticalScrollIndicator = false
         return colection
     }()
     
@@ -28,22 +31,28 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") != true{
+            self.present(LandingViewController(), animated: false, completion: nil)
+        }
         view.backgroundColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Menu"), style: .plain, target: self, action: nil)
-        navigationItem.rightBarButtonItems = [UIBarButtonItem(image: #imageLiteral(resourceName: "bag"), style: .plain, target: self, action: nil),UIBarButtonItem(image: #imageLiteral(resourceName: "Search"), style: .plain, target: self, action: nil)]
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(image: #imageLiteral(resourceName: "bag"), style: .plain, target: self, action: #selector(gotoCart)),UIBarButtonItem(image: #imageLiteral(resourceName: "Search"), style: .plain, target: self, action: nil)]
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)]
         title = "Nike Store"
         collectionView.delegate = self
-        getCategories()
         collectionView.dataSource = self
         collectionView.register(ColCell.self, forCellWithReuseIdentifier: "cell")
- 
-
         
+    }
+    func gotoCart(){
+        let vc = UINavigationController(rootViewController: CartController())
+        self.present(vc, animated: true, completion: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
         if UserDefaults.standard.bool(forKey: "isLoggedIn") != true{
             self.present(LandingViewController(), animated: false, completion: nil)
+        }else{
+            getCategories()
         }
 
     }
@@ -76,9 +85,11 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
         return 2.0
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0{
-            self.navigationController?.pushViewController(shoesController(), animated: true)
-        }
+        let vc = ProductController()
+        vc.category_id = allCategory[indexPath.row].id
+        vc.category_name = allCategory[indexPath.row].name
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 
@@ -107,10 +118,10 @@ class ColCell:UICollectionViewCell{
         image.contentMode = .scaleAspectFit
         return image
     }()
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .black
         addSubview(categoryText)
         addSubview(imageV)
         NSLayoutConstraint.activate([
