@@ -195,7 +195,7 @@
 				TargetAttributes = {
 					6DA417511E7B3C1500987A14 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = TZMPDXRVT8;
+						DevelopmentTeam = KS2P5L4F2M;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -415,7 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = TZMPDXRVT8;
+				DEVELOPMENT_TEAM = KS2P5L4F2M;
 				INFOPLIST_FILE = NikeStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -433,7 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = TZMPDXRVT8;
+				DEVELOPMENT_TEAM = KS2P5L4F2M;
 				INFOPLIST_FILE = NikeStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
