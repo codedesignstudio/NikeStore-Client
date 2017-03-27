@@ -19,7 +19,7 @@ iOS client app for Nike Store
 ## App Link
 
 
-[NikeStore App]()
+[Admin App](https://github.com/codedesignstudio/NikeStore-Admin)
 
 
 ## ScreenShots
