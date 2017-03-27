@@ -93,11 +93,6 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
         second.category_id = allCategory[indexPath.row].id
         second.category_name = allCategory[indexPath.row].name
         let cell = collectionView.cellForItem(at: indexPath) as! ColCell
-//        navigationController?.tr_pushViewController(second, method: TRPushTransitionMethod.omni(keyView: cell), statusBarStyle: .default, completion: {
-//            DispatchQueue.main.async {
-//                
-//            }
-//        })
         self.navigationController?.pushViewController(second, animated: true)
     }
 }

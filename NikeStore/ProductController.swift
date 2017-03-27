@@ -11,14 +11,10 @@ import Kingfisher
 import TransitionTreasury
 import TransitionAnimation
 
-
-class ProductController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,NavgationTransitionable {
+class ProductController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     var category_id:String?
     var category_name:String?
     var token:String?
-    
-    var tr_pushTransition: TRNavgationTransitionDelegate?
-
     
     let topCollection: UICollectionView = {
         let flow = UICollectionViewFlowLayout()
