@@ -12,13 +12,6 @@ import ChameleonFramework
 import TransitionTreasury
 import TransitionAnimation
 
-struct Category {
-    var name:String?
-    var image: String?
-    var color: UIColor?
-    var id:String?
-}
-
 class StoreLandingController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     let collectionView: UICollectionView = {
@@ -47,6 +40,9 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ColCell.self, forCellWithReuseIdentifier: "cell")
+        view.addSubview(collectionView)
+        view.addConstraintsWithFormat("H:|-15-[v0]-15-|", views: collectionView)
+        view.addConstraintsWithFormat("V:|-20-[v0]-10-|", views: collectionView)
         
     }
     func gottoFavorite(){
@@ -65,11 +61,10 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
         }
 
     }
-    override func viewWillLayoutSubviews() {
-        view.addSubview(collectionView)
-        view.addConstraintsWithFormat("H:|-15-[v0]-15-|", views: collectionView)
-        view.addConstraintsWithFormat("V:|-20-[v0]-10-|", views: collectionView)
+    override func viewDidLayoutSubviews() {
+
     }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allCategory.count
     }
@@ -98,7 +93,12 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
         second.category_id = allCategory[indexPath.row].id
         second.category_name = allCategory[indexPath.row].name
         let cell = collectionView.cellForItem(at: indexPath) as! ColCell
-        navigationController?.tr_pushViewController(second, method: TRPushTransitionMethod.omni(keyView: cell))
+//        navigationController?.tr_pushViewController(second, method: TRPushTransitionMethod.omni(keyView: cell), statusBarStyle: .default, completion: {
+//            DispatchQueue.main.async {
+//                
+//            }
+//        })
+        self.navigationController?.pushViewController(second, animated: true)
     }
 }
 

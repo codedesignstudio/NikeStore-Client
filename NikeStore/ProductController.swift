@@ -11,14 +11,6 @@ import Kingfisher
 import TransitionTreasury
 import TransitionAnimation
 
-struct Product{
-    var name:String?
-    var image:String?
-    var price: String?
-    var images: [String]?
-    var description:String
-    var id:String?
-}
 
 class ProductController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,NavgationTransitionable {
     var category_id:String?
@@ -46,7 +38,6 @@ class ProductController: UIViewController, UICollectionViewDelegate,UICollection
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
-    
     var products = [Product]()
     
     override func viewDidLoad() {
@@ -64,20 +55,6 @@ class ProductController: UIViewController, UICollectionViewDelegate,UICollection
         
         topCollection.register(TopCell.self, forCellWithReuseIdentifier: "top")
         collectionView.register(ShoeCell.self, forCellWithReuseIdentifier: "cell")
-        view.addSubview(topCollection)
-        view.addSubview(collectionView)
-        NSLayoutConstraint.activate([
-            topCollection.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            topCollection.bottomAnchor.constraint(equalTo: collectionView.topAnchor),
-            topCollection.widthAnchor.constraint(equalTo: view.widthAnchor),
-            topCollection.heightAnchor.constraint(equalToConstant: 200),
-            
-            collectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            collectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7),
-            
-            ])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,6 +66,9 @@ class ProductController: UIViewController, UICollectionViewDelegate,UICollection
         }else{
             return products.count
         }
+        
+    }
+    func pop() {
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -132,9 +112,7 @@ class ProductController: UIViewController, UICollectionViewDelegate,UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         var vc = productDetailViewController()
-        
         vc.product = self.products[indexPath.row]
-        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

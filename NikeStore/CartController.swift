@@ -1,6 +1,6 @@
 //
 //  CartController.swift
-//  Pods
+//
 //
 //  Created by Sagaya Abdulhafeez on 26/03/2017.
 //
@@ -11,12 +11,6 @@ import Kingfisher
 import TransitionTreasury
 import TransitionAnimation
 
-struct Cart {
-    var image: String?
-    var name:String?
-    var price:String?
-    var productId:String?
-}
 
 class CartController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     var token:String?
@@ -76,43 +70,7 @@ class CartController: UIViewController, UICollectionViewDelegate,UICollectionVie
         topContainerView.isHidden = true
         checkoutButton.isHidden = true
     }
-    override func viewDidLayoutSubviews() {
-        view.addSubview(topContainerView)
-        topContainerView.addSubview(numberOfitems)
-        topContainerView.addSubview(totatlCost)
-        view.addSubview(collectionView)
-        view.addSubview(checkoutButton)
-        var screenRect = UIScreen.main.bounds
-        var screenWidth = screenRect.size.width
-        var cellWidth = screenWidth / 2.0
-        var collectionHeight = cellWidth * 2.0
-        
-        NSLayoutConstraint.activate([
-            topContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 65),
-            topContainerView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            topContainerView.heightAnchor.constraint(equalToConstant: 50),
-            topContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            numberOfitems.leftAnchor.constraint(equalTo: topContainerView.leftAnchor, constant: 10),
-            numberOfitems.topAnchor.constraint(equalTo: topContainerView.topAnchor, constant: 15),
-            numberOfitems.widthAnchor.constraint(equalTo: topContainerView.widthAnchor, multiplier: 0.5),
-            
-            totatlCost.rightAnchor.constraint(equalTo: topContainerView.rightAnchor, constant: 10),
-            totatlCost.topAnchor.constraint(equalTo: topContainerView.topAnchor, constant: 15),
-            totatlCost.widthAnchor.constraint(equalTo: topContainerView.widthAnchor, multiplier: 0.5),
-            
-            collectionView.topAnchor.constraint(equalTo: topContainerView.bottomAnchor, constant: 17),
-            collectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: collectionHeight),
-            collectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            checkoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            checkoutButton.heightAnchor.constraint(equalToConstant: 60),
-            checkoutButton.widthAnchor.constraint(equalTo: view.widthAnchor),
-            checkoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-    }
-    override func viewWillAppear(_ animated: Bool) {
+        override func viewWillAppear(_ animated: Bool) {
         getCartItems()
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -244,25 +202,3 @@ class CartCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

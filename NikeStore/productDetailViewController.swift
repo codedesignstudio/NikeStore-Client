@@ -95,48 +95,7 @@ class productDetailViewController: UIViewController,UICollectionViewDelegate,UIC
         productCollection.dataSource = self
         
     }
-    override func viewDidLayoutSubviews() {
-        view.addSubview(productCollection)
-        view.addSubview(priceLabel)
-        view.addSubview(nameLabel)
-        view.addSubview(descriptionText)
-        view.addSubview(containerView)
-        containerView.addSubview(addToCartButton)
-        containerView.addSubview(addToFavoriteButton)
-        NSLayoutConstraint.activate([
-            productCollection.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            productCollection.widthAnchor.constraint(equalTo: view.widthAnchor),
-            productCollection.heightAnchor.constraint(equalToConstant: 250),
-            productCollection.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            priceLabel.topAnchor.constraint(equalTo: productCollection.bottomAnchor, constant: 13),
-            priceLabel.widthAnchor.constraint(equalTo: view.widthAnchor),
-            priceLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            nameLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 17),
-            nameLabel.widthAnchor.constraint(equalTo: view.widthAnchor),
-            nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            descriptionText.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 17),
-            descriptionText.widthAnchor.constraint(equalTo: view.widthAnchor),
-            descriptionText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            containerView.topAnchor.constraint(equalTo: descriptionText.bottomAnchor, constant: 18),
-            containerView.heightAnchor.constraint(equalToConstant: 90),
-            containerView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            addToFavoriteButton.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20),
-            addToFavoriteButton.topAnchor.constraint(lessThanOrEqualTo: containerView.topAnchor, constant: 15),
-            addToFavoriteButton.heightAnchor.constraint(equalToConstant: 50),
-            addToFavoriteButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.4),
-            
-            addToCartButton.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20),
-            addToCartButton.topAnchor.constraint(lessThanOrEqualTo: containerView.topAnchor, constant: 15),
-            addToCartButton.heightAnchor.constraint(equalToConstant: 50),
-            addToCartButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.4),
-        ])
-    }
+   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }

@@ -81,35 +81,7 @@ class SigninController: UIViewController {
         view.insertSubview(imageview, at: 0)
         
     }
-    override func viewDidLayoutSubviews() {
-        view.addSubview(emailTextField)
-        view.addSubview(passwordTextField)
-        view.addSubview(forgotPasswordButton)
-        view.addSubview(signInButton)
-        view.addSubview(backButton)
-        NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
-            backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12),
-            backButton.widthAnchor.constraint(equalToConstant: 25),
-            backButton.heightAnchor.constraint(equalToConstant: 25),
-            emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50),
-            emailTextField.widthAnchor.constraint(equalToConstant: 170),
-            
-            passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
-            passwordTextField.widthAnchor.constraint(equalToConstant: 170),
-            
-            forgotPasswordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 15),
-            
-            signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            signInButton.topAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor, constant: 40),
-            signInButton.heightAnchor.constraint(equalToConstant: 50),
-            signInButton.widthAnchor.constraint(equalToConstant: 190),
-        ])
-    }
-    
+        
     func unwindBack(){
         self.dismiss(animated: true, completion: nil)
     }

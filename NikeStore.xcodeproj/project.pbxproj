@@ -14,6 +14,7 @@
 		6D3C114B1E881DA20002CDE7 /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C114A1E881DA20002CDE7 /* CartController.swift */; };
 		6D6B96B11E818288005783A6 /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B96B01E818288005783A6 /* constant.swift */; };
 		6D7FB4C01E87D7C900CB45C1 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7FB4BF1E87D7C900CB45C1 /* UIScrollView+EmptyDataSet.m */; };
+		6D87A6821E89A4D000787135 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D87A6811E89A4D000787135 /* models.swift */; };
 		6DA417561E7B3C1600987A14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA417551E7B3C1600987A14 /* AppDelegate.swift */; };
 		6DA417581E7B3C1600987A14 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA417571E7B3C1600987A14 /* LandingViewController.swift */; };
 		6DA417601E7B3C1600987A14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA4175E1E7B3C1600987A14 /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 		6D7FB4BD1E87D7C800CB45C1 /* NikeStore-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NikeStore-Bridging-Header.h"; sourceTree = "<group>"; };
 		6D7FB4BE1E87D7C900CB45C1 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
 		6D7FB4BF1E87D7C900CB45C1 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		6D87A6811E89A4D000787135 /* models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
 		6DA417521E7B3C1600987A14 /* NikeStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikeStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA417551E7B3C1600987A14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DA417571E7B3C1600987A14 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6D5591691E89A0B400CB4AA8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D10133F1E817FD200AF3CA0 /* RegisterController.swift */,
+				6DA417571E7B3C1600987A14 /* LandingViewController.swift */,
+				6DCB60BB1E7B5EB00056A014 /* StoreLandingController.swift */,
+				6D1F372A1E8873B600EC37E5 /* FavoritesController.swift */,
+				6DE335FE1E7C4C670095E4D5 /* ProductController.swift */,
+				6DE336001E7CAF520095E4D5 /* productDetailViewController.swift */,
+				6DA417671E7B50B500987A14 /* SigninController.swift */,
+				6D3C114A1E881DA20002CDE7 /* CartController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6D55916A1E89A0D900CB4AA8 /* extras */ = {
+			isa = PBXGroup;
+			children = (
+				6D6B96B01E818288005783A6 /* constant.swift */,
+				6D19DB2D1E81920700425C0F /* loader.swift */,
+				6D7FB4BE1E87D7C900CB45C1 /* UIScrollView+EmptyDataSet.h */,
+				6D7FB4BF1E87D7C900CB45C1 /* UIScrollView+EmptyDataSet.m */,
+				6DCB60BF1E7B64210056A014 /* Roboto-Regular.ttf */,
+				6DA417611E7B3C1600987A14 /* Info.plist */,
+				6D7FB4BD1E87D7C800CB45C1 /* NikeStore-Bridging-Header.h */,
+			);
+			name = extras;
+			sourceTree = "<group>";
+		};
+		6D55916B1E89A0E600CB4AA8 /* nibs */ = {
+			isa = PBXGroup;
+			children = (
+				6DA4175E1E7B3C1600987A14 /* LaunchScreen.storyboard */,
+			);
+			name = nibs;
+			sourceTree = "<group>";
+		};
+		6D55916C1E89A0ED00CB4AA8 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6DCB60C11E7B6D8E0056A014 /* extension.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
 		6DA417491E7B3C1500987A14 = {
 			isa = PBXGroup;
 			children = (
@@ -103,24 +150,12 @@
 			isa = PBXGroup;
 			children = (
 				6DA417551E7B3C1600987A14 /* AppDelegate.swift */,
-				6DA417571E7B3C1600987A14 /* LandingViewController.swift */,
-				6D6B96B01E818288005783A6 /* constant.swift */,
-				6DCB60BB1E7B5EB00056A014 /* StoreLandingController.swift */,
-				6D1F372A1E8873B600EC37E5 /* FavoritesController.swift */,
-				6DE335FE1E7C4C670095E4D5 /* ProductController.swift */,
-				6DE336001E7CAF520095E4D5 /* productDetailViewController.swift */,
-				6DA417671E7B50B500987A14 /* SigninController.swift */,
-				6D19DB2D1E81920700425C0F /* loader.swift */,
-				6D7FB4BE1E87D7C900CB45C1 /* UIScrollView+EmptyDataSet.h */,
-				6D7FB4BF1E87D7C900CB45C1 /* UIScrollView+EmptyDataSet.m */,
-				6D10133F1E817FD200AF3CA0 /* RegisterController.swift */,
-				6DA4175E1E7B3C1600987A14 /* LaunchScreen.storyboard */,
-				6D3C114A1E881DA20002CDE7 /* CartController.swift */,
-				6DCB60C11E7B6D8E0056A014 /* extension.swift */,
-				6DCB60BF1E7B64210056A014 /* Roboto-Regular.ttf */,
+				6D87A6811E89A4D000787135 /* models.swift */,
+				6D55916C1E89A0ED00CB4AA8 /* extensions */,
+				6D5591691E89A0B400CB4AA8 /* Controllers */,
+				6D55916A1E89A0D900CB4AA8 /* extras */,
+				6D55916B1E89A0E600CB4AA8 /* nibs */,
 				6DCB60BD1E7B624D0056A014 /* Assets.xcassets */,
-				6DA417611E7B3C1600987A14 /* Info.plist */,
-				6D7FB4BD1E87D7C800CB45C1 /* NikeStore-Bridging-Header.h */,
 			);
 			path = NikeStore;
 			sourceTree = "<group>";
@@ -257,6 +292,7 @@
 				6D19DB2E1E81920700425C0F /* loader.swift in Sources */,
 				6D1F372B1E8873B600EC37E5 /* FavoritesController.swift in Sources */,
 				6DE336011E7CAF520095E4D5 /* productDetailViewController.swift in Sources */,
+				6D87A6821E89A4D000787135 /* models.swift in Sources */,
 				6DCB60BC1E7B5EB00056A014 /* StoreLandingController.swift in Sources */,
 				6D1013401E817FD200AF3CA0 /* RegisterController.swift in Sources */,
 				6DA417681E7B50B600987A14 /* SigninController.swift in Sources */,

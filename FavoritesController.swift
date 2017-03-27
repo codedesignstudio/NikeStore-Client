@@ -8,12 +8,6 @@
 
 import UIKit
 
-struct Favorite {
-    var image:String?
-    var id: String?
-    var name:String?
-    var price:String?
-}
 
 class FavoritesController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,UICollectionViewDataSource {
     let collectionView: UICollectionView = {

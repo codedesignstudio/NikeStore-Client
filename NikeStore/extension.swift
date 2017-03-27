@@ -113,7 +113,22 @@ extension ProductController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
         let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
         return NSAttributedString(string: str, attributes: attrs)
     }
-    
+    override func viewDidLayoutSubviews() {
+        view.addSubview(topCollection)
+        view.addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            topCollection.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            topCollection.bottomAnchor.constraint(equalTo: collectionView.topAnchor),
+            topCollection.widthAnchor.constraint(equalTo: view.widthAnchor),
+            topCollection.heightAnchor.constraint(equalToConstant: 200),
+            
+            collectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7),
+            
+            ])
+    }
 }
 
 extension RegisterController {
@@ -129,6 +144,45 @@ extension RegisterController {
                 LLSpinner.stop()
             }
         }
+    }
+    override func viewDidLayoutSubviews() {
+        view.addSubview(emailTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(forgotPasswordButton)
+        view.addSubview(signUpButton)
+        view.addSubview(backButton)
+        view.addSubview(fullName)
+        view.addSubview(phoneNumber)
+        NSLayoutConstraint.activate([
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
+            backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12),
+            backButton.widthAnchor.constraint(equalToConstant: 25),
+            backButton.heightAnchor.constraint(equalToConstant: 25),
+            
+            fullName.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            fullName.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50),
+            fullName.widthAnchor.constraint(equalToConstant: 170),
+            
+            phoneNumber.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            phoneNumber.topAnchor.constraint(equalTo: fullName.bottomAnchor, constant: 20),
+            phoneNumber.widthAnchor.constraint(equalToConstant: 170),
+            
+            emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emailTextField.topAnchor.constraint(equalTo: phoneNumber.bottomAnchor, constant: 20),
+            emailTextField.widthAnchor.constraint(equalToConstant: 170),
+            
+            passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
+            passwordTextField.widthAnchor.constraint(equalToConstant: 170),
+            
+            forgotPasswordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 15),
+            
+            signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signUpButton.topAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor, constant: 40),
+            signUpButton.heightAnchor.constraint(equalToConstant: 50),
+            signUpButton.widthAnchor.constraint(equalToConstant: 190),
+            ])
     }
 }
 
@@ -184,6 +238,48 @@ extension productDetailViewController{
         }
 
     }
+    override func viewDidLayoutSubviews() {
+        view.addSubview(productCollection)
+        view.addSubview(priceLabel)
+        view.addSubview(nameLabel)
+        view.addSubview(descriptionText)
+        view.addSubview(containerView)
+        containerView.addSubview(addToCartButton)
+        containerView.addSubview(addToFavoriteButton)
+        NSLayoutConstraint.activate([
+            productCollection.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            productCollection.widthAnchor.constraint(equalTo: view.widthAnchor),
+            productCollection.heightAnchor.constraint(equalToConstant: 250),
+            productCollection.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            priceLabel.topAnchor.constraint(equalTo: productCollection.bottomAnchor, constant: 13),
+            priceLabel.widthAnchor.constraint(equalTo: view.widthAnchor),
+            priceLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            nameLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 17),
+            nameLabel.widthAnchor.constraint(equalTo: view.widthAnchor),
+            nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            descriptionText.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 17),
+            descriptionText.widthAnchor.constraint(equalTo: view.widthAnchor),
+            descriptionText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            containerView.topAnchor.constraint(equalTo: descriptionText.bottomAnchor, constant: 18),
+            containerView.heightAnchor.constraint(equalToConstant: 90),
+            containerView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            addToFavoriteButton.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20),
+            addToFavoriteButton.topAnchor.constraint(lessThanOrEqualTo: containerView.topAnchor, constant: 15),
+            addToFavoriteButton.heightAnchor.constraint(equalToConstant: 50),
+            addToFavoriteButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.4),
+            
+            addToCartButton.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20),
+            addToCartButton.topAnchor.constraint(lessThanOrEqualTo: containerView.topAnchor, constant: 15),
+            addToCartButton.heightAnchor.constraint(equalToConstant: 50),
+            addToCartButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.4),
+            ])
+    }
 }
 
 extension SigninController {
@@ -210,6 +306,34 @@ extension SigninController {
                 LLSpinner.stop()
             }
         }
+    }
+    override func viewDidLayoutSubviews() {
+        view.addSubview(emailTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(forgotPasswordButton)
+        view.addSubview(signInButton)
+        view.addSubview(backButton)
+        NSLayoutConstraint.activate([
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
+            backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12),
+            backButton.widthAnchor.constraint(equalToConstant: 25),
+            backButton.heightAnchor.constraint(equalToConstant: 25),
+            emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50),
+            emailTextField.widthAnchor.constraint(equalToConstant: 170),
+            
+            passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
+            passwordTextField.widthAnchor.constraint(equalToConstant: 170),
+            
+            forgotPasswordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 15),
+            
+            signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signInButton.topAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor, constant: 40),
+            signInButton.heightAnchor.constraint(equalToConstant: 50),
+            signInButton.widthAnchor.constraint(equalToConstant: 190),
+            ])
     }
 }
 
@@ -266,5 +390,42 @@ extension CartController{
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
+    override func viewDidLayoutSubviews() {
+        view.addSubview(topContainerView)
+        topContainerView.addSubview(numberOfitems)
+        topContainerView.addSubview(totatlCost)
+        view.addSubview(collectionView)
+        view.addSubview(checkoutButton)
+        var screenRect = UIScreen.main.bounds
+        var screenWidth = screenRect.size.width
+        var cellWidth = screenWidth / 2.0
+        var collectionHeight = cellWidth * 2.0
+        
+        NSLayoutConstraint.activate([
+            topContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 65),
+            topContainerView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            topContainerView.heightAnchor.constraint(equalToConstant: 50),
+            topContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            numberOfitems.leftAnchor.constraint(equalTo: topContainerView.leftAnchor, constant: 10),
+            numberOfitems.topAnchor.constraint(equalTo: topContainerView.topAnchor, constant: 15),
+            numberOfitems.widthAnchor.constraint(equalTo: topContainerView.widthAnchor, multiplier: 0.5),
+            
+            totatlCost.rightAnchor.constraint(equalTo: topContainerView.rightAnchor, constant: 10),
+            totatlCost.topAnchor.constraint(equalTo: topContainerView.topAnchor, constant: 15),
+            totatlCost.widthAnchor.constraint(equalTo: topContainerView.widthAnchor, multiplier: 0.5),
+            
+            collectionView.topAnchor.constraint(equalTo: topContainerView.bottomAnchor, constant: 17),
+            collectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            collectionView.heightAnchor.constraint(equalToConstant: collectionHeight),
+            collectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            checkoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            checkoutButton.heightAnchor.constraint(equalToConstant: 60),
+            checkoutButton.widthAnchor.constraint(equalTo: view.widthAnchor),
+            checkoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+    }
+
 }
 

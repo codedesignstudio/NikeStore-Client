@@ -116,45 +116,6 @@ class RegisterController: UIViewController {
         view.insertSubview(imageview, at: 0)
         
     }
-    override func viewDidLayoutSubviews() {
-        view.addSubview(emailTextField)
-        view.addSubview(passwordTextField)
-        view.addSubview(forgotPasswordButton)
-        view.addSubview(signUpButton)
-        view.addSubview(backButton)
-        view.addSubview(fullName)
-        view.addSubview(phoneNumber)
-        NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
-            backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12),
-            backButton.widthAnchor.constraint(equalToConstant: 25),
-            backButton.heightAnchor.constraint(equalToConstant: 25),
-            
-            fullName.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            fullName.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50),
-            fullName.widthAnchor.constraint(equalToConstant: 170),
-            
-            phoneNumber.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            phoneNumber.topAnchor.constraint(equalTo: fullName.bottomAnchor, constant: 20),
-            phoneNumber.widthAnchor.constraint(equalToConstant: 170),
-            
-            emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emailTextField.topAnchor.constraint(equalTo: phoneNumber.bottomAnchor, constant: 20),
-            emailTextField.widthAnchor.constraint(equalToConstant: 170),
-            
-            passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
-            passwordTextField.widthAnchor.constraint(equalToConstant: 170),
-            
-            forgotPasswordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 15),
-            
-            signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            signUpButton.topAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor, constant: 40),
-            signUpButton.heightAnchor.constraint(equalToConstant: 50),
-            signUpButton.widthAnchor.constraint(equalToConstant: 190),
-            ])
-    }
     
     func unwindBack(){
         self.dismiss(animated: true, completion: nil)
