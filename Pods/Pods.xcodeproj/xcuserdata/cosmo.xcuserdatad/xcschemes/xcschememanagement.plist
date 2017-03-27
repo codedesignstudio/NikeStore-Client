@@ -39,15 +39,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TransitionAnimation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TransitionTreasury.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4DC059E04CBA98AEDDB5C34E02D551E9</key>
+		<key>2AE4CDE2327AA1EB53E7AD29D398D3ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C5AB2E2467393914FD1CE97EFE02009</key>
+		<key>4DC059E04CBA98AEDDB5C34E02D551E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,7 +67,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83AE06B9194EA50F3056695BFA292DA5</key>
+		<key>7BC84334345E1AB60524A78EF2181E52</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +77,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9E19972DEA03C9E9F747053C9DA2CAD5</key>
+		<key>C4944FEC314D1A66588651D006273ADE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C4944FEC314D1A66588651D006273ADE</key>
+		<key>CA0857281A9A205B57672EFE0991C70E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9216EAF7EA092E61264521F39CE5C66</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F232D1A6F201895B029E6901EBF50668</key>
 		<dict>
 			<key>primary</key>
 			<true/>

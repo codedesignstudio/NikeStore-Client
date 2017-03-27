@@ -8,6 +8,8 @@
 
 import UIKit
 import Kingfisher
+import TransitionTreasury
+import TransitionAnimation
 
 struct Product{
     var name:String?
@@ -18,10 +20,14 @@ struct Product{
     var id:String?
 }
 
-class ProductController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class ProductController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,NavgationTransitionable {
     var category_id:String?
     var category_name:String?
     var token:String?
+    
+    var tr_pushTransition: TRNavgationTransitionDelegate?
+
+    
     let topCollection: UICollectionView = {
         let flow = UICollectionViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: flow)
@@ -73,9 +79,7 @@ class ProductController: UIViewController, UICollectionViewDelegate,UICollection
             
             ])
     }
-    override func viewDidLayoutSubviews() {
-       
-    }
+    
     override func viewWillAppear(_ animated: Bool) {
         getProducts()
     }

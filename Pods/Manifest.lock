@@ -7,6 +7,9 @@ PODS:
   - Kingfisher (3.5.2)
   - SkyFloatingLabelTextField (3.0.0)
   - SwiftyJSON (3.1.4)
+  - TransitionAnimation (4.0.0):
+    - TransitionTreasury (~> 4.0)
+  - TransitionTreasury (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -15,6 +18,8 @@ DEPENDENCIES:
   - Kingfisher
   - SkyFloatingLabelTextField
   - SwiftyJSON
+  - TransitionAnimation
+  - TransitionTreasury (~> 4.0)
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -32,7 +37,9 @@ SPEC CHECKSUMS:
   Kingfisher: 9950e382c500b6834ce004c7c4131c444e90c3a1
   SkyFloatingLabelTextField: 35bc0c2653ad73c5fd8b7a34cfedf09c94367a1a
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TransitionAnimation: c397b9ca41ab593b35b1e8f8673df17bae0db20a
+  TransitionTreasury: dcf3fe6e5c740525d9e7d4544af45e6fbfd71c88
 
-PODFILE CHECKSUM: 1af1a979028a0a04f8100caf73d36fb666aaba66
+PODFILE CHECKSUM: e1f69ef8a8b39f82426f9cde6959e4f97ed221df
 
 COCOAPODS: 1.0.1

@@ -8,9 +8,12 @@
 
 import UIKit
 import Alamofire
+import TransitionTreasury
+import TransitionAnimation
 
-class LandingViewController: UIViewController {
-    
+class LandingViewController: UIViewController, ModalTransitionDelegate {
+    var tr_presentTransition: TRViewControllerTransitionDelegate?
+
     let signUpButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Sign Up", for: .normal)
@@ -44,10 +47,14 @@ class LandingViewController: UIViewController {
         
     }
     func goToSignIn(){
-        self.present(SigninController(), animated: false, completion: nil)
+        let vc = SigninController()
+        vc.modalDelegate = self
+        tr_presentViewController(vc, method: TRPresentTransitionMethod.fade)
     }
     func goToRegister(){
-        self.present(RegisterController(), animated: false, completion: nil)
+        let vc = RegisterController()
+        vc.modalDelegate = self
+        tr_presentViewController(vc, method: TRPresentTransitionMethod.fade)
     }
     override func viewWillLayoutSubviews() {
         view.addSubview(signUpButton)

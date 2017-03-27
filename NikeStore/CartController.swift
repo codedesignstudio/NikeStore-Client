@@ -8,6 +8,8 @@
 
 import UIKit
 import Kingfisher
+import TransitionTreasury
+import TransitionAnimation
 
 struct Cart {
     var image: String?
@@ -18,6 +20,8 @@ struct Cart {
 
 class CartController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     var token:String?
+    weak var modalDelegate: ModalViewControllerDelegate?
+
     var userid: String?
     let topContainerView: UIView = {
         let v = UIView()

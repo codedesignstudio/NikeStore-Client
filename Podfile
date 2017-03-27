@@ -11,7 +11,8 @@ pod ‘Alamofire’
 pod ‘SwiftyJSON’
 pod 'Kingfisher'
 pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-
+pod 'TransitionTreasury', '~> 4.0’
+pod ‘TransitionAnimation’
 end
 post_install do |installer|
     installer.pods_project.targets.each do |target|

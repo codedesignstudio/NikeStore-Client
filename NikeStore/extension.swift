@@ -158,6 +158,32 @@ extension productDetailViewController{
             }
         }
     }
+    
+    func addToFavorite(){
+        LLSpinner.spin()
+        let url = "\(BASE)/products/\(product.id!)/addtofavorites"
+        let header:HTTPHeaders = ["token": token!]
+        let params: Parameters = ["id": product.id!]
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding(options: []), headers: header).responseJSON { (response) in
+            print(JSON(response.result.value!))
+            if response.response?.statusCode == 200{
+                let alert = UIAlertController(title: "Success", message: "\(self.product.name!) Successfully added to favorites", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alert) in
+                    //GO TO FAVORITE VIEW
+                }))
+                self.present(alert, animated: true, completion: nil)
+                LLSpinner.stop()
+            }else{
+                let alert = UIAlertController(title: "Error", message: "Unable to add \(self.product.name!) to cart", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                LLSpinner.stop()
+            }
+        }
+
+    }
 }
 
 extension SigninController {

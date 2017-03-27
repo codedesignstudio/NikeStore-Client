@@ -9,6 +9,8 @@
 import UIKit
 import Kingfisher
 import ChameleonFramework
+import TransitionTreasury
+import TransitionAnimation
 
 struct Category {
     var name:String?
@@ -31,11 +33,14 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(UserDefaults.standard.string(forKey: "token"))
         if UserDefaults.standard.bool(forKey: "isLoggedIn") != true{
             self.present(LandingViewController(), animated: false, completion: nil)
         }
         view.backgroundColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Menu"), style: .plain, target: self, action: nil)
+        let cartBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Menu"), style: .plain, target: self, action: nil)
+        let favoriteBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "star"), style: .plain, target: self, action: #selector(gottoFavorite))
+        navigationItem.leftBarButtonItems = [cartBarButtonItem]
         navigationItem.rightBarButtonItems = [UIBarButtonItem(image: #imageLiteral(resourceName: "bag"), style: .plain, target: self, action: #selector(gotoCart)),UIBarButtonItem(image: #imageLiteral(resourceName: "Search"), style: .plain, target: self, action: nil)]
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)]
         title = "Nike Store"
@@ -43,6 +48,10 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
         collectionView.dataSource = self
         collectionView.register(ColCell.self, forCellWithReuseIdentifier: "cell")
         
+    }
+    func gottoFavorite(){
+        let vc = UINavigationController(rootViewController: FavoritesController())
+        self.present(vc, animated: true, completion: nil)
     }
     func gotoCart(){
         let vc = UINavigationController(rootViewController: CartController())
@@ -85,11 +94,11 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
         return 2.0
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ProductController()
-        vc.category_id = allCategory[indexPath.row].id
-        vc.category_name = allCategory[indexPath.row].name
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+        let second = ProductController() as! ProductController
+        second.category_id = allCategory[indexPath.row].id
+        second.category_name = allCategory[indexPath.row].name
+        let cell = collectionView.cellForItem(at: indexPath) as! ColCell
+        navigationController?.tr_pushViewController(second, method: TRPushTransitionMethod.omni(keyView: cell))
     }
 }
 

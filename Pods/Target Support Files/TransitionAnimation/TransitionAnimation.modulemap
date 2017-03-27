@@ -1,0 +1,6 @@
+framework module TransitionAnimation {
+  umbrella header "TransitionAnimation-umbrella.h"
+
+  export *
+  module * { export * }
+}

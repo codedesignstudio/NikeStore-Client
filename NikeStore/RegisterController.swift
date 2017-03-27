@@ -9,9 +9,11 @@
 import UIKit
 import SkyFloatingLabelTextField
 import Alamofire
-
+import TransitionAnimation
+import TransitionTreasury
 class RegisterController: UIViewController {
-    
+    weak var modalDelegate: ModalViewControllerDelegate?
+
     let fullName: SkyFloatingLabelTextField  = {
         let t = SkyFloatingLabelTextField()
         t.translatesAutoresizingMaskIntoConstraints = false

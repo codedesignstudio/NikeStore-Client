@@ -8,9 +8,12 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import TransitionAnimation
+import TransitionTreasury
 
 class SigninController: UIViewController {
-    
+    weak var modalDelegate: ModalViewControllerDelegate?
+
     let emailTextField: SkyFloatingLabelTextField  = {
         let t = SkyFloatingLabelTextField()
         t.translatesAutoresizingMaskIntoConstraints = false

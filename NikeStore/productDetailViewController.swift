@@ -35,7 +35,6 @@ class productDetailViewController: UIViewController,UICollectionViewDelegate,UIC
         l.translatesAutoresizingMaskIntoConstraints = false
         l.textAlignment = .center
         return l
-
     }()
     let descriptionText: UILabel = {
         let l = UILabel()
@@ -58,7 +57,7 @@ class productDetailViewController: UIViewController,UICollectionViewDelegate,UIC
         btn.layer.borderColor = UIColor.clear.cgColor
         btn.layer.cornerRadius = 25
         btn.translatesAutoresizingMaskIntoConstraints = false
-//        btn.addTarget(self, action: #selector(goToSignIn), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(addToFavorite), for: .touchUpInside)
         return btn
     }()
     var addToCartButton:UIButton = {
