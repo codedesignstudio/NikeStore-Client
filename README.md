@@ -37,5 +37,9 @@ iOS client app for Nike Store
 ## Design
 
 
+## Contact
+
+Contact [@shaggy](https://twitter.com/___shaggy_)
+
 
 [Momoh Silm](https://twitter.com/m_silm)
