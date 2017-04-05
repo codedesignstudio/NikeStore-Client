@@ -69,8 +69,9 @@ class FavoritesController: UIViewController, UICollectionViewDelegateFlowLayout,
                     let image = favs["product"]["images"][0].string
                     let price = favs["product"]["price"].string
                     let id = favs["product"]["objectId"].string
-                    print(name)
-                    let newFav = Favorite(image: image!, id: id!, name: name!, price: price!)
+                    let images = favs["product"]["images"].arrayObject as! [String]
+                    let desc = favs["product"]["lorem"].string
+                    let newFav = Favorite(name: name!, image: image!, price: price!, images: images, description: desc!, id: id!)
                     self.favorite.append(newFav)
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
@@ -81,6 +82,13 @@ class FavoritesController: UIViewController, UICollectionViewDelegateFlowLayout,
                 LLSpinner.stop()
             }
         }
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let fav = favorite[indexPath.row]
+        let prod = Product(name: fav.name!, image: fav.image!, price: fav.price!, images: fav.images, description: fav.description, id: fav.id!)
+        let vc = productDetailViewController()
+        vc.product = prod
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

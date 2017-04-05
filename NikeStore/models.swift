@@ -24,10 +24,12 @@ struct Cart {
 }
 
 struct Favorite {
-    var image:String?
-    var id: String?
     var name:String?
-    var price:String?
+    var image:String?
+    var price: String?
+    var images: [String]?
+    var description:String
+    var id:String?
 }
 
 struct Category {

@@ -45,7 +45,6 @@ class productDetailViewController: UIViewController,UICollectionViewDelegate,UIC
         
     }()
     
-    
     var addToFavoriteButton:UIButton = {
         let btn = UIButton()
         btn.setTitle("Add to favorites", for: .normal)
@@ -82,6 +81,7 @@ class productDetailViewController: UIViewController,UICollectionViewDelegate,UIC
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.navigationBar.topItem?.title = " "
         title = product.name
         images = product.images!
