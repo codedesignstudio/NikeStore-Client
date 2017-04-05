@@ -59,7 +59,6 @@ extension StoreLandingController{
             if response.response?.statusCode == 200{
                 LLSpinner.stop()
                 let jsonObject = JSON(response.result.value!)
-                print(jsonObject)
                 let jsonCategories = jsonObject["categories"].array
                 for jsonCategory in jsonCategories!{
                     let name = jsonCategory["name"].string
@@ -130,6 +129,8 @@ extension ProductController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
             ])
     }
 }
+
+
 
 extension RegisterController {
     func handleRegister(){
@@ -428,4 +429,3 @@ extension CartController{
     }
 
 }
-

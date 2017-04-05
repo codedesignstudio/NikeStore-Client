@@ -26,7 +26,6 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(UserDefaults.standard.string(forKey: "token"))
         if UserDefaults.standard.bool(forKey: "isLoggedIn") != true{
             self.present(LandingViewController(), animated: false, completion: nil)
         }
@@ -34,7 +33,7 @@ class StoreLandingController: UIViewController, UICollectionViewDelegate,UIColle
         let cartBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Menu"), style: .plain, target: self, action: nil)
         let favoriteBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "star"), style: .plain, target: self, action: #selector(gottoFavorite))
         navigationItem.leftBarButtonItems = [cartBarButtonItem]
-        navigationItem.rightBarButtonItems = [UIBarButtonItem(image: #imageLiteral(resourceName: "bag"), style: .plain, target: self, action: #selector(gotoCart)),UIBarButtonItem(image: #imageLiteral(resourceName: "Search"), style: .plain, target: self, action: nil)]
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(image: #imageLiteral(resourceName: "bag"), style: .plain, target: self, action: #selector(gotoCart)),UIBarButtonItem(image: #imageLiteral(resourceName: "Search"), style: .plain, target: self, action: nil),favoriteBarButton]
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)]
         title = "Nike Store"
         collectionView.delegate = self

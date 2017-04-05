@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		398AC3D296BBD6D4A34FFA18 /* Pods_NikeStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C99C825C23F601BF9F88942 /* Pods_NikeStore.framework */; };
+		6D0FEB4F1E8A5A6B00CDD241 /* libTestFairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0FEB4D1E8A5A6B00CDD241 /* libTestFairy.a */; };
+		6D0FEB511E8A5A9100CDD241 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0FEB501E8A5A9100CDD241 /* AVFoundation.framework */; };
+		6D0FEB531E8A5A9600CDD241 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0FEB521E8A5A9600CDD241 /* CoreMedia.framework */; };
+		6D0FEB551E8A5A9F00CDD241 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0FEB541E8A5A9F00CDD241 /* CoreMotion.framework */; };
+		6D0FEB571E8A5AA400CDD241 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0FEB561E8A5AA400CDD241 /* SystemConfiguration.framework */; };
+		6D0FEB591E8A5AB600CDD241 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0FEB581E8A5AB600CDD241 /* OpenGLES.framework */; };
 		6D1013401E817FD200AF3CA0 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10133F1E817FD200AF3CA0 /* RegisterController.swift */; };
 		6D19DB2E1E81920700425C0F /* loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D19DB2D1E81920700425C0F /* loader.swift */; };
 		6D1F372B1E8873B600EC37E5 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F372A1E8873B600EC37E5 /* FavoritesController.swift */; };
@@ -29,6 +35,13 @@
 
 /* Begin PBXFileReference section */
 		3C99C825C23F601BF9F88942 /* Pods_NikeStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikeStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D0FEB4D1E8A5A6B00CDD241 /* libTestFairy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFairy.a; sourceTree = "<group>"; };
+		6D0FEB4E1E8A5A6B00CDD241 /* TestFairy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFairy.h; sourceTree = "<group>"; };
+		6D0FEB501E8A5A9100CDD241 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6D0FEB521E8A5A9600CDD241 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		6D0FEB541E8A5A9F00CDD241 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		6D0FEB561E8A5AA400CDD241 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6D0FEB581E8A5AB600CDD241 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		6D10133F1E817FD200AF3CA0 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		6D19DB2D1E81920700425C0F /* loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loader.swift; sourceTree = "<group>"; };
 		6D1F372A1E8873B600EC37E5 /* FavoritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesController.swift; path = ../FavoritesController.swift; sourceTree = "<group>"; };
@@ -59,7 +72,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D0FEB591E8A5AB600CDD241 /* OpenGLES.framework in Frameworks */,
+				6D0FEB571E8A5AA400CDD241 /* SystemConfiguration.framework in Frameworks */,
+				6D0FEB551E8A5A9F00CDD241 /* CoreMotion.framework in Frameworks */,
+				6D0FEB531E8A5A9600CDD241 /* CoreMedia.framework in Frameworks */,
+				6D0FEB511E8A5A9100CDD241 /* AVFoundation.framework in Frameworks */,
 				398AC3D296BBD6D4A34FFA18 /* Pods_NikeStore.framework in Frameworks */,
+				6D0FEB4F1E8A5A6B00CDD241 /* libTestFairy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +97,11 @@
 		14EAC924271D68C3207A98E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D0FEB581E8A5AB600CDD241 /* OpenGLES.framework */,
+				6D0FEB561E8A5AA400CDD241 /* SystemConfiguration.framework */,
+				6D0FEB541E8A5A9F00CDD241 /* CoreMotion.framework */,
+				6D0FEB521E8A5A9600CDD241 /* CoreMedia.framework */,
+				6D0FEB501E8A5A9100CDD241 /* AVFoundation.framework */,
 				3C99C825C23F601BF9F88942 /* Pods_NikeStore.framework */,
 			);
 			name = Frameworks;
@@ -150,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				6DA417551E7B3C1600987A14 /* AppDelegate.swift */,
+				6D0FEB4D1E8A5A6B00CDD241 /* libTestFairy.a */,
+				6D0FEB4E1E8A5A6B00CDD241 /* TestFairy.h */,
 				6D87A6811E89A4D000787135 /* models.swift */,
 				6D55916C1E89A0ED00CB4AA8 /* extensions */,
 				6D5591691E89A0B400CB4AA8 /* Controllers */,
@@ -419,6 +445,10 @@
 				INFOPLIST_FILE = NikeStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NikeStore",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cosmo.NikeStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NikeStore/NikeStore-Bridging-Header.h";
@@ -437,6 +467,10 @@
 				INFOPLIST_FILE = NikeStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NikeStore",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cosmo.NikeStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NikeStore/NikeStore-Bridging-Header.h";

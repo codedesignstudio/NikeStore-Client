@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = .black
         UINavigationBar.appearance().isOpaque = true
         
+        TestFairy.begin("348740ce8ae70fd2a5f8a7439cae7b0c07a5c97e")
+        
         let vc = UINavigationController(rootViewController: StoreLandingController())
         window?.rootViewController = vc
         IQKeyboardManager.sharedManager().enable = true
